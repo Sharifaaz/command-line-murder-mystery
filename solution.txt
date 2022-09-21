@@ -1,0 +1,508 @@
+
+#History
+
+  314  cd Desktop
+  315  cd SEI-GA
+  316  mkdir DOM-practice
+  317  cd DOM-practice
+  318  touch index.html
+  319  touch style.css
+  320  touch scripts.js
+  321  code .
+  322  ls
+  323  cd command-line-murder-mystery
+  324  ls
+  325  hint1
+  326  history
+  327  clear history
+  328  ls
+  329  hint1
+  330  cat hint1
+  331  cat solution.txt
+  332  head -n 20 people
+  333  cd head
+  334  cd /mystery
+  335  cd mystery/
+  336  head 20 -n people
+  337  /files$ -n 20 people
+  338  cat people
+  339  head -n 20 people
+  340  cd ..
+  341  cat hint2
+  342  cd mystery/
+  343  grep "CLUE" crimescene
+  344  cd ..
+  345  cd hint3
+  346  cat hint3
+  347  cd mystery/
+  348  cat hint4
+  349  head people
+  350  head vehicles
+  351  cd ..
+  352  cat hint4
+  353  cd mystery/
+  354  grep "Annabel" people
+  355  cat hint5
+  356  cd ..
+  357  cat hint5
+  358  ls
+  359  cd mystery/
+  360  ls
+  361  head -n 173 streets/Mattapan_Street | tail -n
+  362  head -n 173 streets
+  363  cd streets
+  364  head -n 173 streets/Mattapan_Street | tail -n
+  365  head -n 173 streets
+  366  head -n 173 Mattapan_streets
+  367  head -n 173 Mattapan_Street
+  368  cd ..
+  369  cd ..
+  370  cat hint6
+  371  cd mystery/
+  372  grep "Honda" vehicles
+  373  grep "Blue" vehicles
+  374  grep "L337" vehicles
+  375  cd ..
+  376  cat hint7
+  377  cd mystery/
+  378  grep -A 5 "L337" vehicles
+  379  cd ..
+  380  cat hint7
+  381  cat hint8
+  382  cd mystery/
+  383  cd membership
+  384  ls
+  385  cd memberships
+  386  git add .
+  387  git commit -m "You reached the memberships part"
+  388  git commet -a
+  389  cd Desktop
+  390  cd SEI-GA
+  391  cd ..
+  392  cd Revealing_murder
+  393  ls
+  394  cd command-line-murder-mystery
+  395  cd memberships
+  396  cd command-line-murder-mystery
+  397  ls
+  398  cd mystery/
+  399  cd memberships/
+  400  cd ..
+  401  cd ..
+  402  cat hint8
+  403  cd mystery/
+  404  cd memberships/
+  405  cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith"
+  406  cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith" | wc -1
+  407  cat Fitness_Galaxy
+  408  cat Fitness_Galaxy AAA United_MileagePlus
+  409  cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith"
+  410  cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith"
+  411  history
+
+
+
+
+______________________________________________________________________________
+
+#hint1#
+
+$ head -n 20 people
+****************************************************
+To go to the street someone lives on, use the file
+for that street name in the 'streets' subdirectory.
+To knock on their door and investigate, read the line number
+they live on from the file.  If a line looks like gibberish, you're at the wrong house.
+***************
+
+NAME    GENDER  AGE     ADDRESS
+Alicia Fuentes  F       48      Walton Street, line 433
+Jo-Ting Losev   F       46      Hemenway Street, line 390
+Elena Edmonds   F       58      Elmwood Avenue, line 123
+Naydene Cabral  F       46      Winthrop Street, line 454
+Dato Rosengren  M       22      Mystic Street, line 477
+Fernanda Serrano        F       37      Redlands Road, line 392
+Emiliano Wenk   M       90      Paulding Street, line 490
+Larry Lapin     M       71      Atwill Road, line 298
+Jakub Gondos    M       61      Mitchell Street, line 187
+Derek Kazanin   M       55      Tennis Road, line 440
+Jens Tuimalealiifano    M       83      Rockwood Street, line 205
+Nikola Kadhi    M       75      Glenville Avenue, line 226
+
+#hint2#
+******************************************************
+$ grep "CLUE" crimescene
+CLUE: Footage from an ATM security camera is blurry but shows that the perpetrator is at least 6' tall.
+CLUE: Found a wallet believed to belong to the killer: no ID, just loose change, and membership cards for AAA, Delta SkyMiles, the local library, and the Museum of Bash History. The cards are totally untraceable and have no name, for some reason.
+CLUE: Questioned the barista at the local coffee shop. He said a person left right before they heard the shots. The name on their latte was Annabel, they had blond spiky hair and a New Zealand accent.
+
+#hint3#
+******************************************************
+cat hint3
+
+In order to track down our potential witness we need to figure out where they live. 
+Try using 'head' on some of the files like 'people' and 'vehicles' and see where we might find that.
+
+$ head people
+
+To go to the street someone lives on, use the file
+for that street name in the 'streets' subdirectory.
+To knock on their door and investigate, read the line number
+they live on from the file.  If a line looks like gibberish, you're at the wrong house.
+
+
+NAME    GENDER  AGE     ADDRESS
+Alicia Fuentes  F       48      Walton Street, line 433
+Jo-Ting Losev   F       46      Hemenway Street, line 390
+
+$ head vehicles
+
+Vehicle and owner information from the Terminal City Department of Motor Vehicles
+
+
+License Plate T3YUHF6
+Make: Toyota
+Color: Yellow
+Owner: Jianbo Megannem
+Height: 5'6"
+Weight: 246 lbs
+
+
+
+#hint4#
+******************************************************
+$ cat hint4
+To find all the Annabels' addresses, use the 'people' file:
+
+        grep "Annabel" people
+
+Notice that not all of the results are worth investigating.  Remember what we know about Annabel.
+
+$ grep "Annabel" people
+Annabel Sun     F       26      Hart Place, line 40
+Oluwasegun Annabel      M       37      Mattapan Street, line 173
+Annabel Church  F       38      Buckingham Place, line 179
+Annabel Fuglsang        M       40      Haley Street, line 176
+
+#hint5#
+******************************************************
+$ cat hint5
+"Interview" the two possible witnesses by reading the correct line from the streets they live on:
+
+        head -n 173 streets/Mattapan_Street | tail -n 1
+
+This will give you just line 173 of Mattapan street, because it will take first 173 lines, and then take
+the last line from those.
+head -n 173 Mattapan_Street
+refreshments polygamous lighthouse unlearned furors expand
+ungrudging bean whitings yeshivoth supers informs germane
+jerkier barbers treat boy vandalized
+peritoneums perfuming marquee deprogramming sweetie
+roundhouses freemen oppressors
+hairbreadth desperate magnifiers beefed
+foraging misunderstandings inseparability
+bestride reassessments germ editorship
+butte bourbon targeting millepede barking magnets variously
+foreboded lummoxes brownouts dinging winters saxophones
+propels whinier breweries wanes agate
+veritably refrigerating honied rawness broadness
+gather rears lasso denigrates rundown doughtiest boner
+forklifts abound shareholder egregiously
+sphinges gruffly exemplary snorting smirk governess
+bushelled sideline bruins welds rumble takeoffs offshoot
+lilting web prompting homegrown rainiest drowning
+larkspur downpours unmaking breadbasket
+tasters torridest eavesdropped misses
+merman shabbier damping glimpsed emerald items yips
+portraiture badgered tartest multiplier
+bemuse robot besot rebind disintegrates pianissimo printout
+humaner embezzlement impersonally mannequin soviets
+plagiarizes petrifies deserving baring
+hairnets petrolatum affixing glory phoniest
+flees sluggishly wormy eyelets restatements bill
+existent foster grapes sterilized tipsy syrups lapses
+nauseate brisk vexing revenues dribbled stripping
+rhododendron nutmeg trash drily demurred
+sapient monopolize stippling jealous
+monetarism sissy harries prettying summonsed linear divergent
+rousing hunting removal nautili parterres drivel
+inlet beanbags grounder plight footwear hourglasses
+planetary dwarfish indispensables bulletining
+expletives sheepskin prisoner bewared
+bobtails wisteria oblate piing referendums
+apprehend upstanding pint euphemism hobgoblins
+sublimely vividly domes strips
+mates mobilize grouts sideswipe snotty
+heaviest grunt whittles ripely
+novellas blinding snugging flatteringly drills amphitheaters
+reappears emporia desolation unformed rued
+awful inverse whereas assumption battlements dillydallying
+jaded sitars fuelled helms interlink load quarrels
+authority holograph iota nippiest
+powwows tee urgently fraternities bounties fattening swifts
+vizors gusts sue hassles snorers intravenous
+hygienist gestating zippy potshots apropos linemen
+brotherhood highbrow selvages
+refillable nonwhite hairnets awoke
+windjammers flatirons departmentalizing tear
+pupils bazooka belatedly sharpeners
+slipped sawyer pepperonis hummingbirds
+while billfold reformatory fixtures
+jabbing laziest allot gelt alkaloids monologues
+dustier impregnate usually splashdown ingots
+womanizes possessor real iterates pooh lavish worthies
+negotiable vertex linens petrel wrinkliest ranging
+rite juxtapose disruptions televises misunderstands blarney
+proportioning unobserved wended sours breakage probationer
+suede bombards yours inpatients subversives
+spumed splurge memory lepers swiped
+deified sepal soulfulness polluting
+waltzes unleashed divisiveness multiplexer
+immunized toilsome angry defending
+linen llano marathon renewal slumping motormouths
+megalopolis fallow snobby weal harlot dutiful
+motorbikes shooed armor eventuates
+inattention foxy fidelity loosens neoprene
+sown expressiveness dynamiting sower
+frequented gougers internalizes gorgeously antiheroes barbarisms
+pontiffs habitually ginger busying semiweekly
+disuse syphilis sups voodoos falsely
+lamming forbade marten showrooms snaked unrepeatable
+astonishment millionaires unmoved dioramas burners
+substitution administrate boilerplate
+pigmies visitations merino informative firmly
+grilles mobility bristly appellations hydrofoil allied
+waited distorter unbends pontiffs disloyally
+streamlines pinkeye muffler resales shysters stokers
+steppes wreathe slipping boatman unexplored maharanis
+footlights surrealist embryologists
+idyl shuffler parted benefit buggy transvestites preludes
+betraying born slopes womenfolks
+stoked ostentatiously moribund lavished
+overdrawing desiring ported dissembled
+turbots dieters automata kidder
+pervaded tangiest aroma termed weathering ornerier
+fend stubbornest omitted dishonoring
+butter upliftings maximizing dossier
+adopting underpay bulls twinklings prided goaltender
+hookers valleys resolution orgasms
+hallows tirelessness warehouses malingerer breathlessly
+sapient memorialized deathtrap wail
+hashed outlaw depressingly diphthongs weakling ibuprofen
+farsighted physiotherapists squabble um entomb worldliness
+pedestrianizing lummoxes imps north
+intuitively mango vanadium baronial
+invade toileting deplane internships stomps
+plaque resolver uniquely truant
+retrodden billboards undated worldliness masterstrokes
+meowed paroxysm reams driveling
+yip thoughtful globes untangling lambskins frittering
+hematologist plateaued fobbed flouting teletypes
+fumblers streetlight loftiness frighteningly mans
+reapportionment lazies pureeing finding
+beady gossip founder shillings hula pressurized bonbons
+slurring saturating indisputably
+moldering tortoiseshell sardines student
+rodeo detesting stylize adagios inning timidity
+esquires deposit argumentation uptakes ingratiated
+motorbiking pariah irreverently visitation uneventful
+aversions agribusinesses abolitionists
+twin beak flooder budges thinner pending transmutation
+unharmed softballs forges preordaining goldfishes
+liquors garrets pastels frumps mainlines
+unvarnished fusses disables nightmares boggled
+tzars gallon fishtail wear brotherly
+peoples patrolling eruditely hostels
+arbutus bullfighter dean haloing glamoured penlite reapers
+punned undersigns sorest examiner
+pixie burrows reaps not infest insteps pars purebreds
+anneal emotive invert hilltop ampules
+toque abnormality burgling overplay insuring panther
+unwariest tottered undershoot tallness given many gamboling
+asphyxiated ponies rot shrewdness leggiest
+revealed lionizes multiplied troubles rabbis alright
+blarney arouse pile onion narwhal thrust ringside
+tiffing elegant fisherman marring sophist aeries implores
+justifiably barfs about outfielders titmouse
+alibi sprout guesstimate oxford diking rasped emporium
+parallelism duller submissions infield prefab uninitialized
+resignedly equipment frightful fixes housefly leanings
+boulevard releasing belle blurred wiriest
+swiveling adjoining whispers
+furbelow promotes gentian adamant
+proportions disheartened holy profiting jape loin
+detriment wired midday imperatives envious
+outsell notable halting maximum stillbirth area
+hereupon operatives blabbed mantel ultras
+haberdashery edits regarded quandary plum diaphragm
+tares duelled maturation with hardy infuriate
+barometers breadwinners sepsis internist
+operating loftier podiatrists
+stammered grotesquely superfluous noblewomen
+tastelessly waved infinitely populated available
+unearned roles lumberyard swilled
+trashiest beefiest openest anions apprehend plunk mettle
+yeastier seating baling mistake tablespoons
+disgusting stings saddening mealiest requisite
+learns amassed steams vizor nerve liefer
+huffiest towheads appellation inking managerial
+forgery tile potatoes refrigerates improvident
+virulently sapped haemophilia verandahs
+purported index galleon stratify equestrians
+salivates overlapping satellite abstain
+inflexibility matte drubs misrepresentation
+impassivity resisters doldrums fouls quitted rarest
+polygon nutritionists betrothals nonrepresentational
+dishtowel ban boobing tremulously rattan present inhabitants
+initiates sanatoriums propound marathon nematode
+impostor antennas hearers strophe exhausting
+prowls gentlewomen sofa viewpoints
+trombones rebuilt grinding obviously birdbrained
+enemy request steamier blues anymore hustlers somebodies
+pamphlets lusted flusher unregulated fastidious
+dashboards passbooks nourish dentin preparation
+superhighways slanting frank fingerboard
+pennies sorely orthography popinjays outpatient drooping
+realities growl angioplasty worshipped
+panted patellae murk rheas sheltering migrating
+underprivileged stiletto lavished
+SEE INTERVIEW #9437737
+
+
+#hint6#
+
+*********************************************************
+ cat hint6
+To find a matching license plate, or a matching car, you can use grep on the 'vehicles' file:
+
+        grep "Honda" vehicles
+
+        grep "Blue" vehicles
+
+        grep "L337" vehicles
+
+This doesn't give us anything useful - why not? Try using 'head' on the file to investigate its structure.
+
+
+#hint7#
+
+********************************************************
+
+$ cat hint7
+In order to actually get information about vehicles that might match our description,
+we need to get multiple lines AROUND each match.  We can use the -A, -B, or -C option with grep:
+
+        grep -A 5 "L337" mystery/vehicles
+
+This will match the license plates that contain "L337" and, for each match, show us the five lines AFTER it.
+ 
+$ grep -A 5 "L337" vehicles
+License Plate L337ZR9
+Make: Honda
+Color: Red
+Owner: Katie Park
+Height: 6'2"
+Weight: 189 lbs
+--
+License Plate L337P89
+Make: Honda
+Color: Teal
+Owner: Mike Bostock
+Height: 6'4"
+Weight: 173 lbs
+--
+License Plate L337GX9
+Make: Mazda
+Color: Orange
+Owner: John Keefe
+Height: 6'4"
+Weight: 185 lbs
+--
+License Plate L337QE9
+Make: Honda
+Color: Blue
+Owner: Erika Owens
+Height: 6'5"
+Weight: 220 lbs
+--
+License Plate L337GB9
+Make: Toyota
+Color: Blue
+Owner: Matt Waite
+Height: 6'1"
+Weight: 190 lbs
+--
+License Plate L337OI9
+Make: Jaguar
+Color: Blue
+Owner: Brian Boyer
+Height: 6'6"
+Weight: 201 lbs
+--
+License Plate L337X19
+Make: Fiat
+Color: Blue
+Owner: Al Shaw
+Height: 6'5"
+Weight: 240 lbs
+--
+License Plate L337539
+Make: Honda
+Color: Blue
+Owner: Aron Pilhofer
+Height: 5'3"
+Weight: 198 lbs
+--
+License Plate L3373U9
+Make: Ford
+Color: Blue
+Owner: Miranda Mulligan
+Height: 6'6"
+Weight: 156 lbs
+--
+License Plate L337369
+Make: Honda
+Color: Blue
+Owner: Heather Billings
+Height: 5'2"
+Weight: 244 lbs
+--
+License Plate L337DV9
+Make: Honda
+Color: Blue
+Owner: Joe Germuska
+Height: 6'2"
+Weight: 164 lbs
+--
+License Plate L3375A9
+Make: Honda
+Color: Blue
+Owner: Jeremy Bowers
+Height: 6'1"
+Weight: 204 lbs
+--
+License Plate L337WR9
+Make: Honda
+Color: Blue
+Owner: Jacqui Maher
+Height: 6'2"
+Weight: 130 lbs
+
+
+#hint8#
+
+******************************************************************
+
+$ cat hint8
+To see who was a member of several different groups, you can combine their membership lists into one and search against that.
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith"
+
+If you only want to see the number of matches, you can use grep's -c option (the c must be lowercase):
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep -c "John Smith"
+
+Or you can pipe the result to 'wc -l':
+
+        cat Fitness_Galaxy AAA United_MileagePlus | grep "John Smith" | wc -l
+
